@@ -1,0 +1,491 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+/* RESETS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+/* BASE */
+body{
+    font: var(--font-p);
+    color: var(--color-secondary);
+    background-color: var(--white);
+}
+
+.title{
+    font: var(--font-title);
+}
+
+.divider{
+    width: 100%;
+    height: 0.18rem;
+    background: var(--color-primary);
+    border-radius: 3.125rem;
+}
+
+.button{
+    color: var(--white);
+    background: var(--color-primary);
+    width: 10rem;
+    height: 3rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2.5rem;
+    transition: background 0.5s;
+}
+
+.button:hover{
+    background: #2d649f;
+}
+
+
+/* VARIÁVEIS :root define dentro do css */
+:root{
+    /* CORES */
+    --color-primary: #1ECE83;
+    --color-secondary: #545454;
+    --white:#FFF;
+    --color-card: #EEEEEE;
+    --color-background:#fff9f9;
+  
+  /* TAMANHO HEADER */
+    --header-height:6.25rem;
+  
+    /* FONTES */
+    --font-p: 400 1rem "Roboto",sans-serif;
+    --font-h4: 700 1.56rem "Roboto",sans-serif;
+    --font-title: 700 3rem "Roboto", sans-serif;
+  }
+
+/* LAYOUT */
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.grid{
+    display: grid;
+    gap: 2.25rem;
+}
+
+
+/* 4rem emcima e embaixo, 0 esq.dir */
+.section{
+    padding: 4rem 0; 
+}
+/* z-index o header fica o mais importante*/
+#header{
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    margin-bottom: 2rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--color-background);
+}
+
+/* =menu */
+nav.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*menu lado esquerdo*/
+nav .left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+}
+
+/*início menu responsivo*/
+nav ul li{
+    text-align: center;
+    font-size: 2rem;
+}
+
+nav ul li a{
+    transition: color 0.5s;
+}
+
+nav ul li a:hover{
+    color: var(--color-primary);
+}
+
+nav .menu ul{
+    display: none;
+}
+
+nav .menu{
+    opacity: 0;
+    visibility: hidden;
+    left: 12rem;
+    transition: 0.3s;
+}
+
+nav .btn-contatar{
+    opacity: 0;
+    display: none;
+}
+
+/*mostrar o menu hamburguer*/
+nav.show .menu{
+    opacity: 1;
+    visibility: visible;
+    background: #fff9f9;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+}
+
+nav.show .menu ul{
+    display: block;
+}
+
+/*abrir menu*/
+.toggle{
+    font-size: 2rem;
+    color: var(--color-secondary);
+}
+
+nav .icon-x{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 1.5rem;
+}
+
+nav.show .icon-x{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*início, texto*/
+#home .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home .text h2{
+    text-align: center;
+}
+
+
+/*serviços*/
+
+#services .container{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2rem;
+}
+
+/*cards*/
+#services .card{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: 15rem;
+    border-radius: 3.125rem;
+    padding: 10rem 1rem; /*ci/bx esq/dir*/
+}
+
+#services .card-equal{
+    background: var(--color-card);
+    font: var(--font-h4);
+    color: var(--color-primary);
+}
+
+#services .card-diff{
+    background: var(--color-primary);
+    color: var(--white);
+    font: var(--font-p);
+    text-align: center;
+}
+
+#services .card-diff h4{
+    font: var(--font-h4);
+    color: var(--white);
+}
+
+/*quem somos*/
+
+#about .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+#about .text p{
+    font: var(--font-p);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#about .image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+#about .image .button{
+    margin-top: 4rem;
+}
+
+/*contato*/
+
+#contact h2{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#contact .form{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+/*rgba?*/
+#contact .form .input{
+    width: 100%;
+    border-radius: 0.31rem;
+    border: 2px solid var(--color-primary);
+    height: 2rem;
+    background: rgba(30,206,131,0.1);
+}
+
+#contact .form textarea{
+    resize: none;
+    width: 100%;
+    border: 2px solid var(--color-primary);
+    background: rgba(30,206,131,0.1);
+    border-radius: 0.31rem;
+    margin-bottom: 1rem;
+}
+
+#contact .form .button{
+    margin-bottom: 1rem;
+}
+
+/*footer*/
+#footer{
+    background: var(--color-primary);
+    padding: 0.2rem 0;
+}
+
+#footer .maps{
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    margin-top: 3.43rem;
+    border-radius: 1rem;
+}
+
+#footer .maps iframe{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#footer .social{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#footer .social h5{
+    display: flex;
+    align-items: center;
+}
+
+#footer .social .icon{
+    color: var(--white);
+    font: var(--font-p);
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+#footer p{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: var(--white);
+    margin-left: 0.5rem;
+}
+
+/*responsividade*/
+
+@media(min-width: 700px){
+    .container{
+        max-width: 1500px;
+    }
+
+
+nav .menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+nav .menu ul{
+    display: flex;
+    gap: 2rem;
+}
+
+nav .menu ul li a{
+    font:var(--font-p) ;
+}
+
+nav .icon-menu{
+    display: none;
+}
+
+nav .btn-contatar{
+    opacity: 1;
+    display: inline;
+    font: var(--font-p);
+    background: var(--white);
+    border: 1px solid #EEEEEE;
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 3.125rem;
+    margin-right: 15%;
+    transition: transform 0.2s;
+}
+
+nav .btn-contatar:hover{
+    transform: translatex(1rem);
+}
+
+nav .btn-contatar .icon-arrow-right{
+    color: var(--color-primary);
+}
+
+/*inicio*/
+.title{
+    font-size: 3.5rem;
+}
+
+#home .container{
+    grid-auto-flow: column;
+}
+
+#home .title{
+    font-size: 3.1rem;
+}
+
+#home .text{
+    align-items: flex-start;
+    width: 32.5rem;
+}
+
+#home .button{
+    transition: 0.5s;
+}
+
+#home .button:hover{
+    transform: translatex(1rem);
+}
+
+/*serviços*/
+
+#services .cards{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0;
+    position: relative;
+}
+
+#services .card-equal{
+    width: 17.5rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding: 0;
+    margin-top: 5rem;
+}
+
+#services .card-diff{
+    z-index: 1;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#services .left{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#services .right{
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/*quem somos*/
+#about{
+    background-image: url(../patas.png);
+    background-size: 50%;
+}
+
+/*contato*/
+#contact .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .form .input{
+    width: 100%;
+}
+
+/*footer*/
+#footer .container{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 18.75rem;
+}
+
+
+}
